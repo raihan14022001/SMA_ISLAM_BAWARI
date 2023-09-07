@@ -8,66 +8,68 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{ route('admin.save') }}" method="POST" autocomplete="off" enctype="multipart/form-data">
+                <form action="{{ route('blog.save') }}" id="form_blog" method="POST" autocomplete="off" enctype="multipart/form-data">
                     @csrf
+                    <label for="judul">Judul</label>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Name" name="name" id="name"
-                            autocomplete="off" @error('name') is-invalid @enderror required>
-
+                        <input type="text" class="form-control" placeholder="judul" name="judul" id="judul"
+                            autocomplete="off" @error('judul') is-invalid @enderror required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user"></span>
                             </div>
                         </div>
-
-                    </div> @error('name')
+                    </div>
+                    @error('judul')
                         <div class="invalid-feddback">
                             {{ $message }}
                         </div>
                     @enderror
+                    <div class="form-group">
+                        <label>Kategori</label>
+                        <select class="form-control" name="kategori" id="kategori" required>
+                            <option></option>
+                            @foreach ($kategoris as $kategori)
+                                <option value="{{ $kategori->id }}">{{ $kategori->nama_kategori }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    @error('kategori')
+                        <div class="invalid-feddback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                
+                    {{-- <label for="image_thumbnail">Thumbnail</label> --}}
                     <div class="input-group mb-3">
-                        <input type="email" class="form-control" placeholder="Email" name="email" id="email"
-                            autocomplete="off" @error('email') is-invalid @enderror required>
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-envelope"></span>
-                            </div>
-                        </div>
-
-                    </div> @error('email')
+                        <label class="input-group-text" for="image_thumbnail">Upload</label>
+                        <input type="file" class="form-control" id="image_thumbnail" name="image_thumbnail" @error('image_thumbnail') is-invalid @enderror required>
+                    </div>
+                    @error('image_thumbnail')
                         <div class="invalid-feddback">
                             {{ $message }}
                         </div>
                     @enderror
-                    <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Password" name="password"
-                            id="password" @error('password') is-invalid @enderror required>
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-lock"></span>
-                            </div>
+                  
+                    <div class="form-group">
+                        {{-- <label for="image">Gambar</label> --}}
+                        <div class="input-group">
+                          <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="image" name="image" required>
+                            <label class="custom-file-label" for="image">Choose file</label>
+                          </div>
+                          {{-- <div class="input-group-append">
+                            <span class="input-group-text">Upload</span>    
+                          </div> --}}
                         </div>
-
-                    </div> @error('password')
+                    </div>
+                    @error('image')
                         <div class="invalid-feddback">
                             {{ $message }}
                         </div>
                     @enderror
-                    <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Retype password"
-                            name="password_confirmation" id="password_confirmation"
-                            @error('password_confirmation') is-invalid @enderror required>
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-lock"></span>
-                            </div>
-                        </div>
-
-                    </div> @error('password_confirmation')
-                        <div class="invalid-feddback">
-                            {{ $message }}
-                        </div>
-                    @enderror
+                    <label id="konten">Konten</label>
+                    {{-- <textarea name="isi" id="isi" required></textarea> --}}
                     <div class="row">
 
                         <!-- /.col -->
@@ -121,8 +123,9 @@
                             </div>
                         @enderror
                         <div class="input-group mb-3">
-                            <input type="email" class="form-control" placeholder="Email" name="email" id="email"
-                                @error('email') is-invalid @enderror value="{{ $val->email }}" required>
+                            <input type="email" class="form-control" placeholder="Email" name="email"
+                                id="email" @error('email') is-invalid @enderror value="{{ $val->email }}"
+                                required>
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fas fa-envelope"></span>

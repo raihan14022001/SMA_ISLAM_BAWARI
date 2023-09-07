@@ -46,7 +46,22 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 // });
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
-Route::get('/admin', [AdminContoller::class, 'index'])->name('admin')->middleware('auth');
-Route::get('/blog', [BlogController::class, 'index'])->name('blog')->middleware('auth');
 
+
+
+Route::get('admin', [AdminContoller::class, 'index'])->name('admin')->middleware('auth');
+Route::post('admin/save', [AdminContoller::class, 'save_admin'])->name('admin.save')->middleware('auth');
+Route::get('admin/delete/{id}', [AdminContoller::class, 'delete_admin'])->name('admin.delete')->middleware('auth');
+
+
+Route::get('blog', [BlogController::class, 'index'])->name('blog')->middleware('auth');
+Route::post('blog/save', [BlogController::class, 'save_blog'])->name('blog.save')->middleware('auth');
+Route::get('blog/create', [BlogController::class, 'create_blog'])->name('blog.create')->middleware('auth');
+Route::get('blog/edit/{id}', [BlogController::class, 'edit_blog'])->name('blog.edit')->middleware('auth');
+Route::get('blog/delete/{id}', [BlogController::class, 'delete_blog'])->name('blog.delete')->middleware('auth');
+// Route::get('lansia/delete/{id}', [LansiaController::class, 'delete'])->name('lansia.delete')->middleware('auth');
+
+
+
+// Route::get('/blog', [BlogController::class, 'index'])->name('blog')->middleware('auth');
 

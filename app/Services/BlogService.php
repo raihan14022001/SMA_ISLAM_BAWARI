@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use DB;
+use App\Models\Blog;
 use App\Models\User;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Hash;
@@ -10,9 +11,9 @@ use Symfony\Component\HttpFoundation\Request;
 
 
 
-class AdminService
+class BlogService
 {
-    public static function AdminList(Request $request)
+    public static function BlogList(Request $request)
     {
         if($request->has('keywords')){
             // $data = Admin::leftJoin('users', 'users.id', 'admins.user_id')->select('users.*', 'admins.*')
@@ -25,35 +26,44 @@ class AdminService
 // SELECT `users`.*, `admins*` FROM `admins` LEFT JOIN `users` ON `users`.`id` = `admins`.`user_id`
 // WHERE ((`users`.`name` LIKE % $request % OR `users`.`nip` LIKE % $request %) )
         }else{
-            $data = User::paginate(5);
+            $data = Blog::with('image_blog','kategori')->paginate(5);
         }
 
       
         Paginator::useBootstrap();
         return $data;
     }
-    public static function AdminStore($params)
+    public static function BlogStore($params)
     {
-        // dd($params);s
+
+            // Employee::create($requestData);
+
         DB::beginTransaction();
-        try {
-            $inputUser['name'] = $params['name'];
-            $inputUser['email'] = $params['email'];
-            $inputUser['password'] = Hash::make($params['password']);
+        // try {
+            $inputUser['judul'] = $params['judul'];
+            $inputUser['image_thumbnail'] = $params['image_thumbnail'];
+            $inputUser['kategori_id'] = $params['kategori'];
+            $inputUser['user_id'] = $params['user_id'];
+            $inputUser['isi'] = $params['isi'];
             if (isset($params['id'])) {
                 $admin =  User::find($params['id']);
                 // dd($admin); 
                 $data = $admin->update($inputUser);
             }else{
                 // dd('Please');
-                $data = User::create($inputUser);
+                $data = Blog::create($inputUser);
+                // $images = $data->image_blog()->create($inputUser);
+                $aa['image'] = $params['image'];
+
+                $images = $data->image_blog()->create($aa);
+
             }
             DB::commit();
             return $data;
-        } catch (\Throwable $th) {
-            DB::rollback();
-            return $th;
-        }
+        // } catch (\Throwable $th) {
+        //     DB::rollback();
+        //     return $th;
+        // }
     }
     public static function delete($id)
     {
