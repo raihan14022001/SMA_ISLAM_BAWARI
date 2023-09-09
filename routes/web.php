@@ -58,6 +58,7 @@ Route::get('blog', [BlogController::class, 'index'])->name('blog')->middleware('
 Route::post('blog/save', [BlogController::class, 'save_blog'])->name('blog.save')->middleware('auth');
 Route::get('blog/create', [BlogController::class, 'create_blog'])->name('blog.create')->middleware('auth');
 Route::get('blog/edit/{id}', [BlogController::class, 'edit_blog'])->name('blog.edit')->middleware('auth');
+Route::get('blog/show/{id}', [BlogController::class, 'show_blog'])->name('blog.show')->middleware('auth');
 Route::get('blog/delete/{id}', [BlogController::class, 'delete_blog'])->name('blog.delete')->middleware('auth');
 // Route::get('lansia/delete/{id}', [LansiaController::class, 'delete'])->name('lansia.delete')->middleware('auth');
 

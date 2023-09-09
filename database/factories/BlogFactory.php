@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class BlogFactory extends Factory
 {
+    protected $model = \App\Models\Blog::class;
+
     /**
      * Define the model's default state.
      *
@@ -17,7 +19,10 @@ class BlogFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'judul'=> $this->faker->text(12),
+            'isi'=> $this->faker->text(100),
+            'image_url' => 'http://localhost/avatars/150-'.rand(1,10).'.jpg',
+            'creator_id'=> '1'
         ];
     }
 }

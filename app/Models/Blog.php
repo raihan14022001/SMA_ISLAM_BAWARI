@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\kategori;
+use App\Models\lampiran;
 use App\Models\image_blog;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -24,6 +25,10 @@ class Blog extends Model
     public function image_blog()
     {
         return $this->hasMany(image_blog::class);
+    }
+    public function lampiran()
+    {
+        return $this->hasMany(lampiran::class);
     }
     public function kategori(): BelongsTo
     {

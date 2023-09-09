@@ -2,6 +2,23 @@
 @section('head')
     <title>Blog | Dashboard</title>
 @endsection
+@section('url')
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">Form blog</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="{{ route('blog') }}">Blog</a></li>
+                        <li class="breadcrumb-item active">Form</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+@endsection
 @section('konten')
     <section class="content">
         <div class="container-fluid">
@@ -11,18 +28,21 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <form action="{{ route('blog.save') }}" id="form_blog" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('blog.save') }}" id="form_blog" method="POST"
+                                enctype="multipart/form-data">
                                 @csrf
                                 @isset($data)
-                                <input type="hidden" name="id" value="{{ $data->id }}">
+                                    <input type="hidden" name="id" value="{{ $data->id }}">
                                 @endisset
                                 <label for="judul">Judul</label>
-                                <input type="hidden" value="{{ Auth::user()->id }}" name="user_id" id="user_id">
+                                <input type="hidden" value="{{ Auth::user()->id }}" name="user_id" id="user_id"">
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="judul" name="judul" id="judul" autocomplete="off">
+                                    <input type="text" class="form-control" placeholder="judul" name="judul"
+                                        id="judul" autocomplete="off"
+                                        value="@isset($data) {{ $data->judul }} @endisset">
                                 </div>
                                 @error('judul')
-                                    <div class="invalid-feddback">
+                                    <div class="text-danger">
                                         {{ $message }}
                                     </div>
                                 @enderror
@@ -30,34 +50,81 @@
                                     <label>Thumbnail</label>
                                     <br>
                                     <input type="file" name="image_thumbnail" id="image_thumbnail">
+                                    @isset($data)
+                                        <img src="{{ asset($data->image_thumbnail) }}" width='80' height='80'>
+                                    @endisset
                                 </div>
+                                @error('image_thumbnail')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+
                                 <div class="form-group">
                                     <label>Gambar</label>
                                     <br>
-                                    <input type="file" name="image" id="image" multiple>
+                                    <input type="file" name="image[]" multiple>
+                                    @isset($data)
+                                        @foreach ($data->image_blog as $im)
+                                            <img src="{{ asset('/storage/'.$im->image) }}" width='80' height='80'>
+                                        @endforeach
+                                    @endisset
+
                                 </div>
                                 @error('image')
-                                    <div class="invalid-feddback">
+                                    <div class="text-danger">
                                         {{ $message }}
                                     </div>
                                 @enderror
                                 {{-- <br> --}}
+                                <label class="form-label">Lampiran</label>
+                                <div class="mb-3">
+                                    <input type="file" name="path[]" multiple>
+                                </div>
+                                @error('path')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                                <br>
+                                <label for="keterangan">Keterangan Lampiran</label>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="keterangan" name="keterangan"id="keterangan" autocomplete="off" value="@isset($data)@if($data->lampiran->count() > 1){!! $data->lampiran->last()->keterangan !!}@endif@endisset">
+                                </div>
+                                @error('keterangan')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                                 <div class="form-group">
                                     <label>Kategori</label>
                                     <select class="form-control" name="kategori" id="kategori" required>
-                                        <option></option>
+                                        @if (isset($data))
+                                            <option value="{{ $data->kategori_id }}">{{ $data->kategori->nama_kategori }}
+                                            </option>
+                                        @else
+                                            <option></option>
+                                        @endif
+
                                         @foreach ($kategoris as $kategori)
                                             <option value="{{ $kategori->id }}">{{ $kategori->nama_kategori }}</option>
                                         @endforeach
                                     </select>
                                 </div>
                                 @error('kategori')
-                                    <div class="invalid-feddback">
+                                    <div class="text-danger">
                                         {{ $message }}
                                     </div>
                                 @enderror
                                 <label>Konten</label>
-                                <textarea name="isi" id="isi" rows="4" cols="50" required>>@isset($data){{ $data->isi }} @endisset</textarea>
+                                <textarea name="isi" id="isi" rows="4" cols="50">
+                                        @isset($data)
+                                            {!! $data->isi !!}
+                                        @endisset
+                                </textarea>
+                                @error('isi')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                         </div>
                         <div class="card-footer">
                             <button type="submit" class="btn btn-info">Submit</button>
@@ -106,11 +173,6 @@
 
     <script>
         @isset($data)
-            $('#judul').val('{{ $data['judul'] }}').toString();
-            $('#image_thumbnail').val('{{ $data['image_thumbnail'] }}').toString();
-            $('#isi').val('{{ $data['isi'] }}').toString();
-            $('#image').val('{{ $data['image_blog']['image'] }}').toString();
-            $('#kategori').val('{{ $data['nama_kategori']['kategori'] }}').toString();
         @endisset
     </script>
 @endsection
