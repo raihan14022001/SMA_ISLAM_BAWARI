@@ -31,6 +31,18 @@ class kategoriSeeder extends Seeder
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s')
                 ],
+                [
+                    'id' => 3,
+                    'nama_kategori' => 'berita sekolah',
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'updated_at' => date('Y-m-d H:i:s')
+                ],
+                [
+                    'id' => 4,
+                    'nama_kategori' => 'berita umum',
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'updated_at' => date('Y-m-d H:i:s')
+                ],
 
             ]
         );

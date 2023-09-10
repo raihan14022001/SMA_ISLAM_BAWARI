@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('nama');
             $table->string('kontak');
-            $table->string('pesan');
+            $table->text('pesan');
         });
     }
 

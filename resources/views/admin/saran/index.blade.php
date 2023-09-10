@@ -1,25 +1,17 @@
 @extends('layouts.app')
 @section('head')
-    <title>Blog | Dashboard</title>
-    <style>
-        td p {
-            width: 320px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-    </style>
+    <title>Admin | Dashboard</title>
 @endsection
 @section('url')
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Blog</h1>
+                    <h1 class="m-0">User</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Blog</a></li>
+                        <li class="breadcrumb-item"><a href="#">User</a></li>
                         {{-- <li class="breadcrumb-item active">Blog</li> --}}
                     </ol>
                 </div><!-- /.col -->
@@ -52,8 +44,24 @@
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">Responsive Hover Table</h3>
-                            <a href="{{ route('blog.create') }}" class="btn btn-success float-right"><i
-                                    class="fa fa-plus"></i></a>
+                            {{-- <h3 class="card-title">Responsive Hover Table</h3> --}}
+                            <a href="" class="btn btn-success float-right" data-toggle="modal"
+                                data-target="#modal-lg"><i class="fa fa-plus"></i></a>
+                            {{-- <button type="button" class="btn btn-default" >
+                                Launch Large Modal
+                              </button> --}}
+                            {{-- <div class="card-tools">
+                                <div class="input-group input-group-sm" style="width: 150px;">
+                                    <input type="text" name="table_search" class="form-control float-right"
+                                        placeholder="Search">
+
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-default">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div> --}}
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body table-responsive p-0">
@@ -63,10 +71,8 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Action</th>
-                                        <th>Thumbnail</th>
-                                        <th>Judul</th>
-                                        <th>Kategori</th>
-                                        {{-- <th>Thumbnail</th> --}}
+                                        <th>Name</th>
+                                        <th>Kontak</th>
                                         <th>Created</th>
                                         {{-- <th>Created</th> --}}
 
@@ -78,27 +84,16 @@
                                         <tr>
                                             <td> {{ $key + $data->firstItem() }}</td>
                                             <td>
-                                                {{-- <a href="" class="btn btn-secondary"><i class="fa fa-info"></i></a> --}}
-                                                <a href="{{ route('blog.show', ['id' => $val->id]) }}"
-                                                    class="btn btn-secondary"><i class="fa fa-info"></i></a>
-                                                <a href="{{ route('blog.edit', ['id' => $val->id]) }}"
-                                                    class="btn btn-primary"><i class="fa fa-edit"></i></a>
-
-                                                <a class="btn btn-danger deleteBlog" data-id="{{ $val->id }}"><i
+                                                <a href="{{ route('saran.show', ['id' => $val->id]) }}" class="btn btn-secondary"><i class="fa fa-info"></i></a>
+                                                {{-- <a class="btn btn-primary" data-toggle="modal"
+                                                    data-target="#modal-lg{{ $val->id }}"><i
+                                                        class="fa fa-edit"></i></a> --}}
+                                                <a class="btn btn-danger saranDelete" data-id="{{ $val->id }}"><i
                                                         class="fa fa-trash"></i></a>
                                             </td>
-                                            <td>
-                                                {{-- <img src="" width= '50' height='50'  alt="image_thumbnail"> --}}
-                                                <img src="{{ asset($val->image_thumbnail) }}" width='50' height='50'>
-                                                {{-- {{ $val->image_thumbnail }} --}}
-                                                {{-- {{ asset($val->image_thumbnail) }} --}}
-                                            </td>
-                                            {{-- <img src="{{ asset($item->photo) }}" width= '50' height='50' --}}
-                                            <td>
-                                                <p>{{ $val->judul }}</p>
-                                            </td>
-                                            <td>{{ $val->kategori->nama_kategori }}</td>
-                                            <td>{{ $val->created_at->translatedFormat('d M Y, h:i A') }}</td>
+                                            <td>{{ $val->nama }}</td>
+                                            <td>{{ $val->kontak }}</td>
+                                            <td>{{ $val->created_at }}</td>
 
                                             {{-- <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td> --}}
                                         </tr>
@@ -110,33 +105,24 @@
                         </div>
                         <!-- /.card-body -->
                     </div>
-                    {{-- <textarea name="isi" id="isi"></textarea> --}}
-
                     <!-- /.card -->
                 </div>
             </div>
             <!-- /.row -->
         </div><!-- /.container-fluid -->
+        @include('admin.admin.form')
     </section>
-
 @endsection
 
 @section('script')
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <script>
-        @if (session()->has('success'))
-            swal("Success!", "Data Berhasil dibuat", "success");
-            {{ session()->forget('success'); }}
-        @endif
-        @if (session()->has('successEdit'))
-            swal("Success!", "Data Berhasil diedit", "success");
-            {{ session()->forget('successEdit'); }}
-        @endif
         @if (session()->has('success_hapus'))
             swal("Success!", "Data Berhasil dihapus", "success");
             {{ session()->forget('success_hapus'); }}
         @endif
-        $('.deleteBlog').click(function() {
+        $('.saranDelete').click(function() {
             var id = $(this).attr('data-id');
             swal({
                     title: "Apakah Anda Yakin?",
@@ -146,9 +132,9 @@
                 })
                 .then((willDelete) => {
                     if (willDelete) {
-                        window.location = "blog/delete/" + id;
+                        window.location = "saran/delete/" + id;
                     } else {
-                        swal("Batal menghapus akun!");
+                        swal("Batal menghapus data!");
                     }
                 });
         });

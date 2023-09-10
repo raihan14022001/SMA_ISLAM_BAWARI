@@ -120,12 +120,15 @@
     <script>
         @if (session()->has('success'))
             swal("Success!", "Data Berhasil dibuat", "success");
+            {{ session()->forget('success'); }}
         @endif
         @if (session()->has('successEdit'))
             swal("Success!", "Data Berhasil diedit", "success");
+            {{ session()->forget('successEdit'); }}
         @endif
         @if (session()->has('success_hapus'))
             swal("Success!", "Data Berhasil dihapus", "success");
+            {{ session()->forget('success_hapus'); }}
         @endif
         $('.userDelete').click(function() {
             var id = $(this).attr('data-id');

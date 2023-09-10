@@ -5,7 +5,9 @@ use App\Http\Controllers\AdminContoller;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisController;
+use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\SaranMasukanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +20,26 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', [HomePageController::class, 'index'])->name('home');
+Route::get('/home', [HomePageController::class, 'index'])->name('home');
+Route::get('/siswa', [HomePageController::class, 'siswa'])->name('siswa');
+Route::get('/guru', [HomePageController::class, 'guru'])->name('guru');
+
+
+Route::get('/berita_umum', [HomePageController::class, 'berita_umum'])->name('berita_umum');
+Route::get('/berita_umum/show/{id}', [HomePageController::class, 'show_berita_umum'])->name('berita_umum.show');
+
+
+Route::get('saran', [SaranMasukanController::class, 'index'])->name('saran')->middleware('auth');
+Route::get('saran/show/{id}', [SaranMasukanController::class, 'show'])->name('saran.show')->middleware('auth');
+Route::get('saran/delete/{id}', [SaranMasukanController::class, 'delete'])->name('saran.delete')->middleware('auth');
+Route::post('saran/save', [SaranMasukanController::class, 'save_saran'])->name('saran.save');
+
+
+
 
 // ==================auth
 Route::get('/register', [RegisController::class, 'index'])->name('register');
@@ -65,4 +84,6 @@ Route::get('blog/delete/{id}', [BlogController::class, 'delete_blog'])->name('bl
 
 
 // Route::get('/blog', [BlogController::class, 'index'])->name('blog')->middleware('auth');
+
+
 

@@ -51,6 +51,15 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{url('saran')}}" class="nav-link {{checkRouteActive('saran')}}" >
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Saran & Masukan
+                            {{-- <span class="right badge badge-danger">New</span> --}}
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="nav-link {{checkRouteActive('logout')}}" >
                         <i class="nav-icon fas fa-th"></i>
                         <p>

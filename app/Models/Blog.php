@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\User;
 use App\Models\kategori;
 use App\Models\lampiran;
 use App\Models\image_blog;
@@ -33,5 +34,10 @@ class Blog extends Model
     public function kategori(): BelongsTo
     {
         return $this->belongsTo(kategori::class,'kategori_id');
+    }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class,'user_id');
     }
 }

@@ -28,8 +28,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <form action="{{ route('blog.save') }}" id="form_blog" method="POST"
-                                enctype="multipart/form-data">
+                            <form action="{{ route('blog.save') }}" id="form_blog" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @isset($data)
                                     <input type="hidden" name="id" value="{{ $data->id }}">
@@ -87,7 +86,7 @@
                                 <br>
                                 <label for="keterangan">Keterangan Lampiran</label>
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="keterangan" name="keterangan"id="keterangan" autocomplete="off" value="@isset($data)@if($data->lampiran->count() > 1){!! $data->lampiran->last()->keterangan !!}@endif@endisset">
+                                    <input type="text" class="form-control" placeholder="keterangan" name="keterangan"id="keterangan" autocomplete="off" value="@isset($data)@if($data->lampiran->count() > 1){!! $data->lampiran->last()->keterangan !!}@endif @endisset">
                                 </div>
                                 @error('keterangan')
                                     <div class="text-danger">
