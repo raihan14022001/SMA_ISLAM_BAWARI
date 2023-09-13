@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Response;
 use App\Models\Blog;
 use App\Models\kategori;
-use Illuminate\Http\Request;
+use App\Models\lampiran;
+use Illuminate\Support\Facades\Request;
 
 class HomePageController extends Controller
 {
@@ -29,11 +31,14 @@ class HomePageController extends Controller
     }
     public function show_berita_umum($id)
     {
-        $data = Blog::with('image_blog', 'kategori','user')->find($id);
+        $data = Blog::with('image_blog', 'kategori','user', 'lampiran')->find($id);
         $kategoris = kategori::find($data->kategori_id);
-        // dd($kategoris);
-        // $data_id = kategori::where('kategori_id', 'berita umum')->get();
-
         return view('home_page.berita_umum.show', compact('data', 'kategoris'));
+    }
+    public function download_pdf($id)
+    {
+        $file = lampiran::find($id);
+        $path = public_path("/storage/{$file->path}");
+        return \Response::download($path);
     }
 }
