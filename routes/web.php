@@ -31,6 +31,7 @@ Route::get('/guru', [HomePageController::class, 'guru'])->name('guru');
 
 Route::get('/berita_umum', [HomePageController::class, 'berita_umum'])->name('berita_umum');
 Route::get('/berita_umum/show/{id}', [HomePageController::class, 'show_berita_umum'])->name('berita_umum.show');
+Route::get('/download/{id}', [HomePageController::class, 'download_pdf'])->name('download');
 
 
 Route::get('saran', [SaranMasukanController::class, 'index'])->name('saran')->middleware('auth');
