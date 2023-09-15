@@ -81,7 +81,7 @@
 
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-md-auto">
                 @include('home_page.section.saran_masukan')
             </div>
 

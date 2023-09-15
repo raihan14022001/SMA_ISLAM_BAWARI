@@ -32,7 +32,7 @@
                             href="{{ url('profile') }}">Profil</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+                        <a class="nav-link" href="#" data-bs-toggle="dropdown" aria-expanded="false">Tentang</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item  {{ checkRouteActive('visi-misi') }}  "
                                     href="{{ url('visi-misi') }}">Visi & Misi</a></li>

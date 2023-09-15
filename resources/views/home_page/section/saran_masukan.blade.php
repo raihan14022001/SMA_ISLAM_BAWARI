@@ -8,13 +8,13 @@
             {{-- <form action="{{ route('saran.save') }}" method="POST" enctype="multipart/form-data">
                 @csrf --}}
             <form action="{{ route('saran.save') }}" method="POST" autocomplete="off" enctype="multipart/form-data">
-                    @csrf
+                @csrf
                 <label class="form-label">Kontak</label>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Masukan email atau no hp" name="kontak" id="kontak"
-                        autocomplete="off" @error('kontak') is-invalid @enderror required>
+                    <input type="text" class="form-control" placeholder="Masukan email atau no hp" name="kontak"
+                        id="kontak" autocomplete="off" @error('kontak') is-invalid @enderror required>
                 </div>
-                 @error('kontak')
+                @error('kontak')
                     <div class="invalid-feddback">
                         {{ $message }}
                     </div>
@@ -24,16 +24,17 @@
                     <input type="text" class="form-control" placeholder="Masukan nama" name="name" id="name"
                         autocomplete="off" @error('name') is-invalid @enderror required>
                 </div>
-                 @error('name')
+                @error('name')
                     <div class="invalid-feddback">
                         {{ $message }}
                     </div>
                 @enderror
                 <label class="form-label">Pesan dan Masukan</label>
                 <div class="input-group mb-3">
-                        <textarea name="pesan" id="pesan" cols="30" placeholder="Masukan pesan dan masukan" class="form-control" rows="10"></textarea>
+                    <textarea name="pesan" id="pesan" cols="30" placeholder="Masukan pesan dan masukan" class="form-control"
+                        rows="10"></textarea>
                 </div>
-                 @error('pesan')
+                @error('pesan')
                     <div class="invalid-feddback">
                         {{ $message }}
                     </div>

@@ -1,6 +1,6 @@
 @extends('home_page.app2')
 @section('head')
-    <title>Agenda</title>
+    <title>berita sekolah</title>
 @endsection
 
 @section('isi')
@@ -36,7 +36,7 @@
 
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-md-auto">
                 @include('home_page.section.saran_masukan')
             </div>
 
