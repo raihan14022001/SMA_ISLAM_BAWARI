@@ -15,6 +15,11 @@ class HomePageController extends Controller
         return view('home_page.home.index');
     }
 
+    public function indexp()
+    {
+        return view('home_page.profile.profile');
+    }
+
     public function guru()
     {
         return view('home_page.guru.index');
@@ -51,7 +56,7 @@ class HomePageController extends Controller
         $data_id = kategori::where('nama_kategori', 'BERITA SEKOLAH')->get();
         $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
         $kategori =  $data_id->last()->nama_kategori;
-        
+
         return view('home_page.home.visi_misi.index', compact('data', 'kategori'));
     }
     public function sejarah()
@@ -59,7 +64,7 @@ class HomePageController extends Controller
         $data_id = kategori::where('nama_kategori', 'SEJARAH SINGKAT')->get();
         $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
         $kategori =  $data_id->last()->nama_kategori;
-        
+
         return view('home_page.home.sejarah.index', compact('data', 'kategori'));
 
     }
@@ -68,7 +73,7 @@ class HomePageController extends Controller
         $data_id = kategori::where('nama_kategori', 'SARANA PRASARAN')->get();
         $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
         $kategori =  $data_id->last()->nama_kategori;
-        
+
         return view('home_page.home.sarjana.index', compact('data', 'kategori'));
     }
     public function struktur()
@@ -76,7 +81,7 @@ class HomePageController extends Controller
         $data_id = kategori::where('nama_kategori', 'STRUKTUR ORGANISASI')->get();
         $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
         $kategori =  $data_id->last()->nama_kategori;
-        
+
         return view('home_page.home.struktur.index', compact('data', 'kategori'));
     }
     public function sambutan()
@@ -84,7 +89,7 @@ class HomePageController extends Controller
         $data_id = kategori::where('nama_kategori', 'SAMBUTAN KEPALA SEKOLAH')->get();
         $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
         $kategori =  $data_id->last()->nama_kategori;
-        
+
         return view('home_page.home.sambutan.index', compact('data', 'kategori'));
     }
     public function kemitraan()
@@ -92,7 +97,7 @@ class HomePageController extends Controller
         $data_id = kategori::where('nama_kategori', 'KEMITRAAN')->get();
         $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
         $kategori =  $data_id->last()->nama_kategori;
-        
+
         return view('home_page.home.kemitraan.index', compact('data', 'kategori'));
     }
     public function program()
@@ -100,7 +105,7 @@ class HomePageController extends Controller
         $data_id = kategori::where('nama_kategori', 'PROGRAM KERJA')->get();
         $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
         $kategori =  $data_id->last()->nama_kategori;
-        
+
         return view('home_page.home.program.index', compact('data', 'kategori'));
     }
     public function komite()
@@ -108,7 +113,7 @@ class HomePageController extends Controller
         $data_id = kategori::where('nama_kategori', 'KOMITE SEKOLAH')->get();
         $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
         $kategori =  $data_id->last()->nama_kategori;
-        
+
         return view('home_page.home.komite.index', compact('data', 'kategori'));
     }
     public function prestasi()
@@ -116,7 +121,7 @@ class HomePageController extends Controller
         $data_id = kategori::where('nama_kategori', 'PRESTASI')->get();
         $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
         $kategori =  $data_id->last()->nama_kategori;
-        
+
         return view('home_page.home.prestasi.index', compact('data', 'kategori'));
     }
 
@@ -126,7 +131,7 @@ class HomePageController extends Controller
         $data_id = kategori::where('nama_kategori', 'DIREKTORI GURU')->get();
         $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
         $kategori =  $data_id->last()->nama_kategori;
-        
+
         return view('home_page.guru.direktori_guru.index', compact('data', 'kategori'));
     }
     public function prestasi_guru()
@@ -134,7 +139,7 @@ class HomePageController extends Controller
         $data_id = kategori::where('nama_kategori', 'PRESTASI GURU')->get();
         $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
         $kategori =  $data_id->last()->nama_kategori;
-        
+
         return view('home_page.guru.prestasi_guru.index', compact('data', 'kategori'));
     }
 
@@ -144,7 +149,7 @@ class HomePageController extends Controller
         $data_id = kategori::where('nama_kategori', 'DIREKTORI SISWA')->get();
         $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
         $kategori =  $data_id->last()->nama_kategori;
-        
+
         return view('home_page.siswa.direktori_siswa.index', compact('data', 'kategori'));
     }
     public function prestasi_siswa()
@@ -152,7 +157,7 @@ class HomePageController extends Controller
         $data_id = kategori::where('nama_kategori', 'PRESTASI SISWA')->get();
         $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
         $kategori =  $data_id->last()->nama_kategori;
-        
+
         return view('home_page.siswa.prestasi_siswa.index', compact('data', 'kategori'));
     }
     public function ektrakurikuler()
@@ -160,7 +165,7 @@ class HomePageController extends Controller
         $data_id = kategori::where('nama_kategori', 'EKSTAKURIKULER SISWA')->get();
         $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
         $kategori =  $data_id->last()->nama_kategori;
-        
+
         return view('home_page.siswa.ektrakurikuler.index', compact('data', 'kategori'));
     }
     public function osis()
@@ -168,7 +173,7 @@ class HomePageController extends Controller
         $data_id = kategori::where('nama_kategori', 'OSIS SISWA')->get();
         $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
         $kategori =  $data_id->last()->nama_kategori;
-        
+
         return view('home_page.siswa.osis.index', compact('data', 'kategori'));
     }
 
@@ -178,7 +183,7 @@ class HomePageController extends Controller
         $data_id = kategori::where('nama_kategori', 'KALENDER AKADEMIK')->get();
         $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
         $kategori =  $data_id->last()->nama_kategori;
-        
+
         return view('home_page.informasi.kalender.index', compact('data', 'kategori'));
     }
     public function beasiswa()
@@ -186,7 +191,7 @@ class HomePageController extends Controller
         $data_id = kategori::where('nama_kategori', 'BEASISWA')->get();
         $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
         $kategori =  $data_id->last()->nama_kategori;
-        
+
         return view('home_page.informasi.beasiswa.index', compact('data', 'kategori'));
     }
     public function penerimaan()
@@ -194,7 +199,7 @@ class HomePageController extends Controller
         $data_id = kategori::where('nama_kategori', 'PENERIMAAN SISWA BARU')->get();
         $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
         $kategori =  $data_id->last()->nama_kategori;
-        
+
         return view('home_page.informasi.penerimaan.index', compact('data', 'kategori'));
     }
     public function informasi_alumni()
@@ -202,7 +207,7 @@ class HomePageController extends Controller
         $data_id = kategori::where('nama_kategori', 'ALUMNI')->get();
         $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
         $kategori =  $data_id->last()->nama_kategori;
-        
+
         return view('home_page.informasi.informasi_alumni.index', compact('data', 'kategori'));
     }
 
@@ -212,7 +217,7 @@ class HomePageController extends Controller
         $data_id = kategori::where('nama_kategori', 'AGENDA')->get();
         $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
         $kategori =  $data_id->last()->nama_kategori;
-        
+
         return view('home_page.agenda.index', compact('data', 'kategori'));
     }
     //kontak

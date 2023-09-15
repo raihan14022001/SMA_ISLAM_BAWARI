@@ -24,6 +24,7 @@ use App\Http\Controllers\SaranMasukanController;
 //     return view('welcome');
 // });
 Route::get('/', [HomePageController::class, 'index'])->name('home');
+Route::get('/profile', [HomePageController::class, 'indexp'])->name('profil');
 Route::get('/home', [HomePageController::class, 'index'])->name('home');
 Route::get('/siswa', [HomePageController::class, 'siswa'])->name('siswa');
 Route::get('/guru', [HomePageController::class, 'guru'])->name('guru');

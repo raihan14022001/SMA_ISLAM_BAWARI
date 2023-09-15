@@ -28,7 +28,8 @@
                 <a class="navbar-brand col-lg-3 me-0" href="#"></a>
                 <ul class="navbar-nav col-lg-6 justify-content-lg-center">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Profil</a>
+                        <a class="nav-link {{ checkRouteActive('visi-misi') }}" aria-current="page"
+                            href="{{ url('profile') }}">Profil</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link" href="#" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
@@ -102,15 +103,6 @@
                     <li class="nav-item">
                         <a class="nav-link {{ checkRouteActive('agenda') }}" aria-current="page"
                             href="{{ url('agenda') }}">Agenda</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link {{ checkRouteActive('kontaksekolah') }}" aria-current="page"
-                            href="{{ url('kontak-sekolah') }}">Kontak</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ checkRouteActive('download') }}" aria-current="page"
-                            href="{{ url('download') }}">Download</a>
                     </li>
                 </ul>
 
