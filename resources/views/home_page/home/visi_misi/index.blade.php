@@ -21,9 +21,9 @@
                                     <div class="card-body">
                                         <h5 class="card-title">{{ $dataBlog->judul }} || {{ $kategori }} </h5>
                                         </p>
-                                        <a href="{{ route('blog.show', ['id' => $dataBlog->id]) }}"
+                                        <a href="{{ route('detail.blog', ['id' => $dataBlog->id]) }}"
                                             class="btn btn-primary">Lihat</a>
-                                        {{-- <a href="{{ route('blog.show', ['id' => $val->id]) }}" class="btn btn-secondary"><i class="fa fa-info"></i></a> --}}
+                                        {{-- <a href="{{ route('detail.blog', ['id' => $val->id]) }}" class="btn btn-secondary"><i class="fa fa-info"></i></a> --}}
                                     </div>
                                 </div>
                             </div>

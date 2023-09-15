@@ -70,7 +70,7 @@ Route::get('/download-lampiran/{id}', [HomePageController::class, 'download_pdf'
 
 
 
-Route::get('/detail/{id}', [HomePageController::class, 'detail'])->name('detail.show');
+Route::get('/detail-blog/{id}', [HomePageController::class, 'detail'])->name('detail.blog');
 
 
 
