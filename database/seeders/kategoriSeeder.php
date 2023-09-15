@@ -156,6 +156,11 @@ class kategoriSeeder extends Seeder
                     'nama_kategori' => 'KEMITRAAN',
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s')
+                ],[
+                    'id' => 24,
+                    'nama_kategori' => 'ALUMNI',
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'updated_at' => date('Y-m-d H:i:s')
                 ],
 
 

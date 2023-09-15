@@ -119,6 +119,11 @@
     </div>
 
     <div class="container">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3989.8180321829004!2d109.329896!3d-0.021776!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e1d58f6738b9437%3A0xa967ded534725396!2sSMA%20Islam%20Bawari%20Plus!5e0!3m2!1sid!2sid!4v1694784635237!5m2!1sid!2sid"
+            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
             <div class="col-md-4 d-flex align-items-center">
                 <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
@@ -126,7 +131,7 @@
                         <use xlink:href="#bootstrap"></use>
                     </svg>
                 </a>
-                <span class="mb-3 mb-md-0 text-muted">© 2022 Company, Inc</span>
+                <span class="mb-3 mb-md-0 text-muted">© 2023 SISKOM Untan, A | R </span>
             </div>
 
             <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
