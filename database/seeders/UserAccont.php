@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class UserAccont extends Seeder
 {
@@ -22,7 +22,7 @@ class UserAccont extends Seeder
             [
                 'id' => 1,
                 'name' => $faker->name,
-                'email' => "qwaszx@mailinator.com", 
+                'email' => "qwaszx@mailinator.com",
                 'password'=>bcrypt('qwaszx'),
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
@@ -30,7 +30,7 @@ class UserAccont extends Seeder
             [
                 'id' => 2,
                 'name' => $faker->name,
-                'email' => "qwerty@mailinator.com", 
+                'email' => "qwerty@mailinator.com",
                 'password'=>bcrypt('qwerty'),
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
