@@ -37,8 +37,8 @@
                                     href="{{ url('visi-misi') }}">Visi & Misi</a></li>
                             <li><a class="dropdown-item  {{ checkRouteActive('sejarah-singkat') }}  "
                                     href="{{ url('sejarah-singkat') }}">Sejarah Singkat</a></li>
-                            <li><a class="dropdown-item  {{ checkRouteActive('sarjana-prasajana') }}  "
-                                    href="{{ url('sarjana-prasajana') }}">Sarjana & Prasajana</a></li>
+                            <li><a class="dropdown-item  {{ checkRouteActive('sarana-prasarana') }}  "
+                                    href="{{ url('sarana-prasarana') }}">Sarjana & Prasajana</a></li>
                             <li><a class="dropdown-item  {{ checkRouteActive('struktur-organisasi') }}  "
                                     href="{{ url('struktur-organisasi') }}">Struktur Organisasi</a></li>
                             <li><a class="dropdown-item  {{ checkRouteActive('sambutan-kepala-sekolah') }}  "

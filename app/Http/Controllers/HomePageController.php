@@ -48,92 +48,172 @@ class HomePageController extends Controller
     //home
     public function visi_misi()
     {
-        //ini blog
+        $data_id = kategori::where('nama_kategori', 'BERITA SEKOLAH')->get();
+        $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
+        $kategori =  $data_id->last()->nama_kategori;
         
+        return view('home_page.home.visi_misi.index', compact('data', 'kategori'));
     }
     public function sejarah()
     {
-        return view('home_page.home.sejarah.index');
+        $data_id = kategori::where('nama_kategori', 'SEJARAH SINGKAT')->get();
+        $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
+        $kategori =  $data_id->last()->nama_kategori;
+        
+        return view('home_page.home.sejarah.index', compact('data', 'kategori'));
+
     }
     public function sarjana()
     {
-        return view('home_page.home.sarjana.index');
+        $data_id = kategori::where('nama_kategori', 'SARANA PRASARAN')->get();
+        $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
+        $kategori =  $data_id->last()->nama_kategori;
+        
+        return view('home_page.home.sarjana.index', compact('data', 'kategori'));
     }
     public function struktur()
     {
-        return view('home_page.home.struktur.index');
+        $data_id = kategori::where('nama_kategori', 'STRUKTUR ORGANISASI')->get();
+        $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
+        $kategori =  $data_id->last()->nama_kategori;
+        
+        return view('home_page.home.struktur.index', compact('data', 'kategori'));
     }
     public function sambutan()
     {
-        return view('home_page.home.sambutan.index');
+        $data_id = kategori::where('nama_kategori', 'SAMBUTAN KEPALA SEKOLAH')->get();
+        $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
+        $kategori =  $data_id->last()->nama_kategori;
+        
+        return view('home_page.home.sambutan.index', compact('data', 'kategori'));
     }
     public function kemitraan()
     {
-        return view('home_page.home.kemitraan.index');
+        $data_id = kategori::where('nama_kategori', 'KEMITRAAN')->get();
+        $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
+        $kategori =  $data_id->last()->nama_kategori;
+        
+        return view('home_page.home.kemitraan.index', compact('data', 'kategori'));
     }
     public function program()
     {
-        return view('home_page.home.program.index');
+        $data_id = kategori::where('nama_kategori', 'PROGRAM KERJA')->get();
+        $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
+        $kategori =  $data_id->last()->nama_kategori;
+        
+        return view('home_page.home.program.index', compact('data', 'kategori'));
     }
     public function komite()
     {
-        return view('home_page.home.komite.index');
+        $data_id = kategori::where('nama_kategori', 'KOMITE SEKOLAH')->get();
+        $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
+        $kategori =  $data_id->last()->nama_kategori;
+        
+        return view('home_page.home.komite.index', compact('data', 'kategori'));
     }
     public function prestasi()
     {
-        return view('home_page.home.prestasi.index');
+        $data_id = kategori::where('nama_kategori', 'PRESTASI')->get();
+        $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
+        $kategori =  $data_id->last()->nama_kategori;
+        
+        return view('home_page.home.prestasi.index', compact('data', 'kategori'));
     }
 
     //guru
     public function direktori_guru()
     {
-        return view('home_page.guru.direktori_guru.index');
+        $data_id = kategori::where('nama_kategori', 'DIREKTORI GURU')->get();
+        $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
+        $kategori =  $data_id->last()->nama_kategori;
+        
+        return view('home_page.guru.direktori_guru.index', compact('data', 'kategori'));
     }
     public function prestasi_guru()
     {
-        return view('home_page.guru.prestasi_guru.index');
+        $data_id = kategori::where('nama_kategori', 'PRESTASI GURU')->get();
+        $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
+        $kategori =  $data_id->last()->nama_kategori;
+        
+        return view('home_page.guru.prestasi_guru.index', compact('data', 'kategori'));
     }
 
     //siswa
     public function direktori_siswa()
     {
-        return view('home_page.siswa.direktori_siswa.index');
+        $data_id = kategori::where('nama_kategori', 'DIREKTORI SISWA')->get();
+        $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
+        $kategori =  $data_id->last()->nama_kategori;
+        
+        return view('home_page.siswa.direktori_siswa.index', compact('data', 'kategori'));
     }
     public function prestasi_siswa()
     {
-        return view('home_page.siswa.prestasi_siswa.index');
+        $data_id = kategori::where('nama_kategori', 'PRESTASI SISWA')->get();
+        $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
+        $kategori =  $data_id->last()->nama_kategori;
+        
+        return view('home_page.siswa.prestasi_siswa.index', compact('data', 'kategori'));
     }
     public function ektrakurikuler()
     {
-        return view('home_page.siswa.ektrakurikuler.index');
+        $data_id = kategori::where('nama_kategori', 'EKSTAKURIKULER SISWA')->get();
+        $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
+        $kategori =  $data_id->last()->nama_kategori;
+        
+        return view('home_page.siswa.ektrakurikuler.index', compact('data', 'kategori'));
     }
     public function osis()
     {
-        return view('home_page.siswa.osis.index');
+        $data_id = kategori::where('nama_kategori', 'OSIS SISWA')->get();
+        $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
+        $kategori =  $data_id->last()->nama_kategori;
+        
+        return view('home_page.siswa.osis.index', compact('data', 'kategori'));
     }
 
     //informasi
     public function kalender()
     {
-        return view('home_page.informasi.kalender.index');
+        $data_id = kategori::where('nama_kategori', 'KALENDER AKADEMIK')->get();
+        $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
+        $kategori =  $data_id->last()->nama_kategori;
+        
+        return view('home_page.informasi.kalender.index', compact('data', 'kategori'));
     }
     public function beasiswa()
     {
-        return view('home_page.informasi.beasiswa.index');
+        $data_id = kategori::where('nama_kategori', 'BEASISWA')->get();
+        $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
+        $kategori =  $data_id->last()->nama_kategori;
+        
+        return view('home_page.informasi.beasiswa.index', compact('data', 'kategori'));
     }
     public function penerimaan()
     {
-        return view('home_page.informasi.penerimaan.index');
+        $data_id = kategori::where('nama_kategori', 'PENERIMAAN SISWA BARU')->get();
+        $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
+        $kategori =  $data_id->last()->nama_kategori;
+        
+        return view('home_page.informasi.penerimaan.index', compact('data', 'kategori'));
     }
     public function informasi_alumni()
     {
-        return view('home_page.informasi.informasi_alumni.index');
+        $data_id = kategori::where('nama_kategori', 'ALUMNI')->get();
+        $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
+        $kategori =  $data_id->last()->nama_kategori;
+        
+        return view('home_page.informasi.informasi_alumni.index', compact('data', 'kategori'));
     }
 
     //agenda
     public function agenda()
     {
-        return view('home_page.agenda.index');
+        $data_id = kategori::where('nama_kategori', 'AGENDA')->get();
+        $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
+        $kategori =  $data_id->last()->nama_kategori;
+        
+        return view('home_page.agenda.index', compact('data', 'kategori'));
     }
     //kontak
     public function kontak_sekolah()
