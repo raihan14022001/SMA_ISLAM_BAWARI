@@ -12,7 +12,7 @@ class HomePageController extends Controller
 {
     public function index()
     {
-        return view('home_page.home.index');
+        return view('home_page.profile.profile');
     }
 
     public function indexp()
