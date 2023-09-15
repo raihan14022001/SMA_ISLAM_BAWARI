@@ -1,6 +1,6 @@
 @extends('home_page.app2')
 @section('head')
-    <title>Prestasi/title>
+    <title>Prestasi<title>
     @endsection
 
     @section('isi')

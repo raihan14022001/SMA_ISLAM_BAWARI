@@ -36,7 +36,7 @@ Route::get('/download/{id}', [HomePageController::class, 'download_pdf'])->name(
 // home
 Route::get('/visi-misi', [HomePageController::class, 'visi_misi'])->name('visi');
 Route::get('/sejarah-singkat', [HomePageController::class, 'sejarah'])->name('sejarah');
-Route::get('/sarana-prasarana', [HomePageController::class, 'sarjana'])->name('sarjana');
+Route::get('/sarjana', [HomePageController::class, 'sarjana'])->name('sarjana');
 Route::get('/struktur-organisasi', [HomePageController::class, 'struktur'])->name('struktur');
 Route::get('/sambutan-kepala-sekolah', [HomePageController::class, 'sambutan'])->name('sambutan');
 Route::get('/kemitraan', [HomePageController::class, 'kemitraan'])->name('kemitraan');
