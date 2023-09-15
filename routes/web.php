@@ -29,9 +29,48 @@ Route::get('/siswa', [HomePageController::class, 'siswa'])->name('siswa');
 Route::get('/guru', [HomePageController::class, 'guru'])->name('guru');
 
 
-Route::get('/berita_umum', [HomePageController::class, 'berita_umum'])->name('berita_umum');
-Route::get('/berita_umum/show/{id}', [HomePageController::class, 'show_berita_umum'])->name('berita_umum.show');
+
 Route::get('/download/{id}', [HomePageController::class, 'download_pdf'])->name('download');
+
+// home
+Route::get('/visi-misi', [HomePageController::class, 'visi_misi'])->name('visi');
+Route::get('/sejarah-singkat', [HomePageController::class, 'sejarah'])->name('sejarah');
+Route::get('/sarjana-prasajana', [HomePageController::class, 'sarjana'])->name('sarjana');
+Route::get('/struktur-organisasi', [HomePageController::class, 'struktur'])->name('struktur');
+Route::get('/sambutan-kepala-sekolah', [HomePageController::class, 'sambutan'])->name('sambutan');
+Route::get('/kemitraan', [HomePageController::class, 'kemitraan'])->name('kemitraan');
+Route::get('/program-kerja', [HomePageController::class, 'program'])->name('program');
+Route::get('/komite-sekolah', [HomePageController::class, 'komite'])->name('komite');
+Route::get('/prestasi', [HomePageController::class, 'prestasi'])->name('prestasi');
+// guru
+Route::get('/direktori-guru', [HomePageController::class, 'direktori_guru'])->name('direktori_guru');
+Route::get('/prestasi-guru', [HomePageController::class, 'prestasi_guru'])->name('prestasi_guru');
+// Berita
+Route::get('/berita-umum', [HomePageController::class, 'berita_umum'])->name('berita_umum');
+Route::get('/berita-umum/show/{id}', [HomePageController::class, 'show_berita_umum'])->name('berita_umum.show');
+Route::get('/berita-sekolah', [HomePageController::class, 'berita_sekolah'])->name('berita_sekolah');
+//siswa
+Route::get('/direktori-siswa', [HomePageController::class, 'direktori_siswa'])->name('direktori_siswa');
+Route::get('/prestasi-siswa', [HomePageController::class, 'prestasi_siswa'])->name('prestasi_siswa');
+Route::get('/ektrakurikuler', [HomePageController::class, 'ektrakurikuler'])->name('ektrakurikuler');
+Route::get('/osis', [HomePageController::class, 'osis'])->name('osis');
+// informasi
+Route::get('/kalender-akademik', [HomePageController::class, 'kalender'])->name('kalender');
+Route::get('/beasiswa', [HomePageController::class, 'beasiswa'])->name('beasiswa');
+Route::get('/penerimaan-siswa-baru', [HomePageController::class, 'penerimaan'])->name('penerimaan');
+Route::get('/informasi-alumni', [HomePageController::class, 'informasi_alumni'])->name('informasi_alumni');
+// agenda
+Route::get('/agenda', [HomePageController::class, 'agenda'])->name('agenda');
+// kontak
+Route::get('/kontak-sekolah', [HomePageController::class, 'kontak_sekolah'])->name('kontak_sekolah');
+// download
+Route::get('/download', [HomePageController::class, 'download'])->name('download');
+
+
+
+
+
+
 
 
 Route::get('saran', [SaranMasukanController::class, 'index'])->name('saran')->middleware('auth');
