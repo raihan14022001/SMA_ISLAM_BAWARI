@@ -22,20 +22,18 @@ class HomePageController extends Controller
     //berita
     public function berita_umum()
     {
-        $data_id = kategori::where('nama_kategori', 'berita umum')->get();
+        $data_id = kategori::where('nama_kategori', 'BERITA UMUM')->get();
         $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
         $kategori =  $data_id->last()->nama_kategori;
         return view('home_page.berita.berita_umum.index', compact('data', 'kategori'));
     }
-    public function show_berita_umum($id)
-    {
-        $data = Blog::with('image_blog', 'kategori','user', 'lampiran')->find($id);
-        $kategoris = kategori::find($data->kategori_id);
-        return view('home_page.berita.berita_umum.show', compact('data', 'kategoris'));
-    }
+
     public function berita_sekolah()
     {
-        return view('home_page.berita.berita_sekolah.index');
+        $data_id = kategori::where('nama_kategori', 'BERITA SEKOLAH')->get();
+        $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
+        $kategori =  $data_id->last()->nama_kategori;
+        return view('home_page.berita.berita_sekolah.index', compact('data', 'kategori'));
     }
     //download pdf
     public function download_pdf($id)
@@ -145,6 +143,14 @@ class HomePageController extends Controller
     public function download()
     {
         return view('home_page.download.index');
+    }
+
+
+    public function detail($id)
+    {
+        $data = Blog::with('image_blog', 'kategori','user', 'lampiran')->find($id);
+        $kategoris = kategori::find($data->kategori_id);
+        return view('home_page.section.show', compact('data', 'kategoris'));
     }
 
 

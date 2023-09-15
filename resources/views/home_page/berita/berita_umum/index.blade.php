@@ -1,6 +1,6 @@
 @extends('home_page.app2')
 @section('head')
-    <title>berita umum</title>
+    <title>berita sekolah</title>
 @endsection
 
 @section('isi')
@@ -18,7 +18,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $dataBlog->judul }} || {{ $kategori }} </h5>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content </p>
-                            <a href="{{ route('berita_umum.show', ['id' => $dataBlog->id]) }}" class="btn btn-primary">Go
+                            <a href="{{ route('detail.show', ['id' => $dataBlog->id]) }}" class="btn btn-primary">Go
                                 somewhere</a>
                             {{-- <a href="{{ route('blog.show', ['id' => $val->id]) }}" class="btn btn-secondary"><i class="fa fa-info"></i></a> --}}
                         </div>

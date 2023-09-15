@@ -24,7 +24,7 @@
 
     @foreach ($data->lampiran as $file)
         {{-- {{ link_to_asset('/storage/' . $file->path, 'Open the pdf!') }} --}}
-        <a href="{{ route('download', ['id' => $file->id]) }}"><i class="bi bi-filetype-pdf">{{ $file->keterangan }}</i></a> <br>
+        <a href="{{ route('download_pdf', ['id' => $file->id]) }}"><i class="bi bi-filetype-pdf">{{ $file->keterangan }}</i></a> <br>
         {{-- <ion-icon name="document-outline"></ion-icon> --}}
         
         {{-- <p>{{ $file->keterangan }}</p> --}}

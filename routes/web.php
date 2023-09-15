@@ -47,7 +47,6 @@ Route::get('/direktori-guru', [HomePageController::class, 'direktori_guru'])->na
 Route::get('/prestasi-guru', [HomePageController::class, 'prestasi_guru'])->name('prestasi_guru');
 // Berita
 Route::get('/berita-umum', [HomePageController::class, 'berita_umum'])->name('berita_umum');
-Route::get('/berita-umum/show/{id}', [HomePageController::class, 'show_berita_umum'])->name('berita_umum.show');
 Route::get('/berita-sekolah', [HomePageController::class, 'berita_sekolah'])->name('berita_sekolah');
 //siswa
 Route::get('/direktori-siswa', [HomePageController::class, 'direktori_siswa'])->name('direktori_siswa');
@@ -65,6 +64,13 @@ Route::get('/agenda', [HomePageController::class, 'agenda'])->name('agenda');
 Route::get('/kontak-sekolah', [HomePageController::class, 'kontak_sekolah'])->name('kontak_sekolah');
 // download
 Route::get('/download', [HomePageController::class, 'download'])->name('download');
+
+Route::get('/download-lampiran/{id}', [HomePageController::class, 'download_pdf'])->name('download_pdf');
+
+
+
+Route::get('/detail/{id}', [HomePageController::class, 'detail'])->name('detail.show');
+
 
 
 
