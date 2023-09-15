@@ -22,6 +22,7 @@ class HomePageController extends Controller
     //berita
     public function berita_umum()
     {
+        //Ini Blog
         $data_id = kategori::where('nama_kategori', 'BERITA UMUM')->get();
         $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
         $kategori =  $data_id->last()->nama_kategori;
@@ -47,7 +48,8 @@ class HomePageController extends Controller
     //home
     public function visi_misi()
     {
-        return view('home_page.home.visi_misi.index');
+        //ini blog
+        
     }
     public function sejarah()
     {
@@ -158,4 +160,3 @@ class HomePageController extends Controller
 
 
 }
-    

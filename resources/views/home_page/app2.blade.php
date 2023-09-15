@@ -31,59 +31,79 @@
                         <a class="nav-link active" aria-current="page" href="#">Profil</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" data-bs-toggle="dropdown"
-                            aria-expanded="false">Home</a>
+                        <a class="nav-link" href="#" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item  {{  checkRouteActive('visi-misi') }}  " href="{{url('visi-misi')}}">Visi & Misi</a></li>
-                            <li><a class="dropdown-item  {{  checkRouteActive('sejarah-singkat') }}  " href="{{url('sejarah-singkat')}}">Sejarah Singkat</a></li>
-                            <li><a class="dropdown-item  {{  checkRouteActive('sarjana-prasajana') }}  " href="{{url('sarjana-prasajana')}}">Sarjana & Prasajana</a></li>
-                            <li><a class="dropdown-item  {{  checkRouteActive('struktur-organisasi') }}  " href="{{url('struktur-organisasi')}}">Struktur Organisasi</a></li>
-                            <li><a class="dropdown-item  {{  checkRouteActive('sambutan-kepala-sekolah') }}  " href="{{url('sambutan-kepala-sekolah')}}">Sambutan Kepala Sekolah</a></li>
-                            <li><a class="dropdown-item  {{  checkRouteActive('kemitraan') }}  " href="{{url('kemitraan')}}">Kemitraan</a></li>
-                            <li><a class="dropdown-item  {{  checkRouteActive('program-kerja') }}  " href="{{url('program-kerja')}}">Program Kerja</a></li>
-                            <li><a class="dropdown-item  {{  checkRouteActive('komite-sekolah') }}  " href="{{url('komite-sekolah')}}">komite Sekolah</a></li>
-                            <li><a class="dropdown-item  {{  checkRouteActive('prestasi') }}  " href="{{url('prestasi')}}">Presitasi</a></li>
+                            <li><a class="dropdown-item  {{ checkRouteActive('visi-misi') }}  "
+                                    href="{{ url('visi-misi') }}">Visi & Misi</a></li>
+                            <li><a class="dropdown-item  {{ checkRouteActive('sejarah-singkat') }}  "
+                                    href="{{ url('sejarah-singkat') }}">Sejarah Singkat</a></li>
+                            <li><a class="dropdown-item  {{ checkRouteActive('sarjana-prasajana') }}  "
+                                    href="{{ url('sarjana-prasajana') }}">Sarjana & Prasajana</a></li>
+                            <li><a class="dropdown-item  {{ checkRouteActive('struktur-organisasi') }}  "
+                                    href="{{ url('struktur-organisasi') }}">Struktur Organisasi</a></li>
+                            <li><a class="dropdown-item  {{ checkRouteActive('sambutan-kepala-sekolah') }}  "
+                                    href="{{ url('sambutan-kepala-sekolah') }}">Sambutan Kepala Sekolah</a></li>
+                            <li><a class="dropdown-item  {{ checkRouteActive('kemitraan') }}  "
+                                    href="{{ url('kemitraan') }}">Kemitraan</a></li>
+                            <li><a class="dropdown-item  {{ checkRouteActive('program-kerja') }}  "
+                                    href="{{ url('program-kerja') }}">Program Kerja</a></li>
+                            <li><a class="dropdown-item  {{ checkRouteActive('komite-sekolah') }}  "
+                                    href="{{ url('komite-sekolah') }}">komite Sekolah</a></li>
+                            <li><a class="dropdown-item  {{ checkRouteActive('prestasi') }}  "
+                                    href="{{ url('prestasi') }}">Presitasi</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link " href="#" data-bs-toggle="dropdown" aria-expanded="false">Guru</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item {{  checkRouteActive('direktori-guru') }}" href="{{url('direktori-guru')}}">Direktori Guru</a></li>
-                            <li><a class="dropdown-item {{  checkRouteActive('prestasi-guru') }}" href="{{url('prestasi-guru')}}">Prestasi Guru</a></li>
+                            <li><a class="dropdown-item {{ checkRouteActive('direktori-guru') }}"
+                                    href="{{ url('direktori-guru') }}">Direktori Guru</a></li>
+                            <li><a class="dropdown-item {{ checkRouteActive('prestasi-guru') }}"
+                                    href="{{ url('prestasi-guru') }}">Prestasi Guru</a></li>
 
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link " href="#" data-bs-toggle="dropdown" aria-expanded="false">Siswa</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item {{  checkRouteActive('direktori-siswa') }}" href="{{url('direktori-siswa')}}">Direktori Siswa</a></li>
-                            <li><a class="dropdown-item {{  checkRouteActive('prestasi-siswa') }}" href="{{url('prestasi-siswa')}}">Prestasi Siswa</a></li>
-                            <li><a class="dropdown-item {{  checkRouteActive('ektrakurikuler') }}" href="{{url('ektrakurikuler')}}">Ektrakurikuler</a></li>
-                            <li><a class="dropdown-item {{  checkRouteActive('osis') }}" href="{{url('osis')}}">Osis</a></li>
+                            <li><a class="dropdown-item {{ checkRouteActive('direktori-siswa') }}"
+                                    href="{{ url('direktori-siswa') }}">Direktori Siswa</a></li>
+                            <li><a class="dropdown-item {{ checkRouteActive('prestasi-siswa') }}"
+                                    href="{{ url('prestasi-siswa') }}">Prestasi Siswa</a></li>
+                            <li><a class="dropdown-item {{ checkRouteActive('ektrakurikuler') }}"
+                                    href="{{ url('ektrakurikuler') }}">Ektrakurikuler</a></li>
+                            <li><a class="dropdown-item {{ checkRouteActive('osis') }}"
+                                    href="{{ url('osis') }}">Osis</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link " href="#" data-bs-toggle="dropdown" aria-expanded="false">Berita</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item {{  checkRouteActive('berita-sekolah') }}" href="{{url('berita-sekolah')}}">Berita Sekolah</a></li>
-                            <li><a class="dropdown-item" {{  checkRouteActive('berita-umum') }} href="{{url('berita-umum')}}">Berita Umum</a></li>
+                            <li><a class="dropdown-item {{ checkRouteActive('berita-sekolah') }}"
+                                    href="{{ url('berita-sekolah') }}">Berita Sekolah</a></li>
+                            <li><a class="dropdown-item" {{ checkRouteActive('berita-umum') }}
+                                    href="{{ url('berita-umum') }}">Berita Umum</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link " href="#" data-bs-toggle="dropdown"
                             aria-expanded="false">Informasi</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item {{  checkRouteActive('kalender-akademik') }}" href="{{url('kalender-akademik')}}">Kalender Akademik</a></li>
-                            <li><a class="dropdown-item {{  checkRouteActive('beasiswa') }}" href="{{url('beasiswa')}}">Beasiswa</a></li>
-                            <li><a class="dropdown-item {{  checkRouteActive('penerimaan-siswa-baru') }}" href="{{url('penerimaan-siswa-baru')}}">Penerimaan Siswa baru</a></li>
-                            <li><a class="dropdown-item {{  checkRouteActive('informasi-alumni') }}" href="{{url('informasi-alumni')}}">Informasi Alumni</a></li>
+                            <li><a class="dropdown-item {{ checkRouteActive('kalender-akademik') }}"
+                                    href="{{ url('kalender-akademik') }}">Kalender Akademik</a></li>
+                            <li><a class="dropdown-item {{ checkRouteActive('beasiswa') }}"
+                                    href="{{ url('beasiswa') }}">Beasiswa</a></li>
+                            <li><a class="dropdown-item {{ checkRouteActive('penerimaan-siswa-baru') }}"
+                                    href="{{ url('penerimaan-siswa-baru') }}">Penerimaan Siswa baru</a></li>
+                            <li><a class="dropdown-item {{ checkRouteActive('informasi-alumni') }}"
+                                    href="{{ url('informasi-alumni') }}">Informasi Alumni</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ checkRouteActive('agenda') }}" aria-current="page"
                             href="{{ url('agenda') }}">Agenda</a>
                     </li>
-                    
+
                     <li class="nav-item">
                         <a class="nav-link {{ checkRouteActive('kontaksekolah') }}" aria-current="page"
                             href="{{ url('kontak-sekolah') }}">Kontak</a>
@@ -100,41 +120,7 @@
             </div>
         </div>
     </nav>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
 
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        {{-- <a class="nav-link active" aria-current="page" href="#">Halaman Utama</a> --}}
-                        <a href="{{ url('home') }}" class="nav-link {{ checkRouteActive('home') }}">home</a>
-                    </li>
-                    <li class="nav-item">
-                        {{-- <a class="nav-link active" aria-current="page" href="#">Halaman Utama</a> --}}
-                        <a href="{{ url('guru') }}" class="nav-link {{ checkRouteActive('guru') }}">Guru</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ url('siswa') }}" class="nav-link {{ checkRouteActive('siswa') }}">siswa</a>
-                    </li>
-                    <li class="nav-item">
-                        {{-- <a class="nav-link" href="#">Pricing</a> --}}
-                        <a href="{{ url('berita_umum') }}"
-                            class="nav-link {{ checkRouteActive('berita_umum') }}">berita
-                            umum</a>
-
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
     <div class="container">
         @yield('isi')
 

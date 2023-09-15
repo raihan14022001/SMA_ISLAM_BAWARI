@@ -1,14 +1,35 @@
-@extends('home_page.app2')
-@section('head')
-    <title>home</title>
-@endsection
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <div class="row">
+                @if ($data != null)
+                    @foreach ($data as $dataBlog)
+                        <div class="col-sm-4 mb-6 mb-sm-0">
+                            <div class="card">
+                                <img src="{{ asset($dataBlog->image_thumbnail) }}" class="card-img-top" alt="gambar"
+                                    height="300">
+                                {{-- <img src="{{ asset($data->image_thumbnail) }}" width='80' height='80'> --}}
 
-@section('isi')
-<p>home</p>
-<br>
-@include('home_page.section.saran_masukan')
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $dataBlog->judul }} || {{ $kategori }} </h5>
+                                    </p>
+                                    <a href="{{ route('blog.show', ['id' => $dataBlog->id]) }}"
+                                        class="btn btn-primary">Lihat</a>
+                                    {{-- <a href="{{ route('blog.show', ['id' => $val->id]) }}" class="btn btn-secondary"><i class="fa fa-info"></i></a> --}}
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                @else
+                    <p>no data</p>
+                @endif
 
-@endsection
+                <br>
 
-@section('script')
-@endsection
+            </div>
+        </div>
+        <div class="col-3">
+            @include('home_page.section.saran_masukan')
+        </div>
+
+    </div>
