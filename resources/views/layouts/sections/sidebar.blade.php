@@ -23,15 +23,7 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                 data-accordion="false">
-                <li class="nav-item">
-                    <a  href="{{url('dashboard')}}" class="nav-link {{checkRouteActive('dashboard')}}">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Dashboard
-                            {{-- <span class="right badge badge-danger">New</span> --}}
-                        </p>
-                    </a>
-                </li>
+            
                 <li class="nav-item">
                     <a href="{{url('admin')}}" class="nav-link {{checkRouteActive('admin')}}" >
                         <i class="nav-icon fas fa-th"></i>

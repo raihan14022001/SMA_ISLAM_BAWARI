@@ -51,12 +51,12 @@ class BlogController extends Controller
             // dd('c');
             $validated = $request->validate([
                 'user_id' => 'required',
-                'judul' => 'required|min:3|max:255',
-                'image.*' => 'required|mimes:jpeg,png,jpg|max:2048',
-                'image_thumbnail' => 'required|mimes:jpeg,png,jpg|max:2048',
+                'judul' => 'required',
+                'image.*' => 'required|mimes:jpeg,png,jpg',
+                'image_thumbnail' => 'required|mimes:jpeg,png,jpg',
                 'kategori' => 'required',
                 'isi' => 'required',
-                'path.*' => 'mimes:pdf,xlx,csv|max:2048',
+                'path.*' => 'mimes:pdf',
                 'keterangan' => '',
             ]);
             $params = $validated;
@@ -67,12 +67,12 @@ class BlogController extends Controller
             $validated = $request->validate([
                 'id'=>'required',
                 'user_id' => 'required',
-                'judul' => 'min:3|max:255',
-                'image.*' => 'mimes:jpeg,png,jpg|max:2048',
-                'image_thumbnail' => 'mimes:jpeg,png,jpg|max:2048',
+                'judul' => 'required',
+                'image.*' => 'mimes:jpeg,png,jpg',
+                'image_thumbnail' => 'mimes:jpeg,png,jpg',
                 'kategori' => '',
                 'isi' => '',
-                'path.*' => 'mimes:pdf,xlx,csv|max:2048',
+                'path.*' => 'mimes:pdf',
                 'keterangan' => '',
             ]);
             $params = $validated;

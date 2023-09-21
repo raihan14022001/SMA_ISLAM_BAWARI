@@ -23,28 +23,13 @@
     <section class="content">
         <div class="container-fluid">
             <!-- /.row -->
-            <div class="row">
-                <div class="col-md-8 offset-md-2">
-                    <form action="simple-results.html">
-                        <div class="input-group">
-                            <input type="search" class="form-control form-control-lg"
-                                placeholder="Type your keywords here">
-                            <div class="input-group-append">
-                                <button type="submit" class="btn btn-lg btn-default">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <br>
+
             <div class="row">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Responsive Hover Table</h3>
-                            {{-- <h3 class="card-title">Responsive Hover Table</h3> --}}
+                            
+                            {{--  --}}
                             <a href="" class="btn btn-success float-right" data-toggle="modal"
                                 data-target="#modal-lg"><i class="fa fa-plus"></i></a>
                             {{-- <button type="button" class="btn btn-default" >
@@ -84,7 +69,7 @@
                                         <tr>
                                             <td> {{ $key + $data->firstItem() }}</td>
                                             <td>
-                                                <a href="" class="btn btn-secondary"><i class="fa fa-info"></i></a>
+                                                {{-- <a href="" class="btn btn-secondary"><i class="fa fa-info"></i></a> --}}
                                                 <a class="btn btn-primary" data-toggle="modal"
                                                     data-target="#modal-lg{{ $val->id }}"><i
                                                         class="fa fa-edit"></i></a>

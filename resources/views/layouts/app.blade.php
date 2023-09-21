@@ -25,7 +25,7 @@
   <!-- Daterange picker -->
   <link rel="stylesheet" href="{{ url('/') }}/plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
-  <link rel="stylesheet" href="{{ url('/') }}/plugins/summernote/summernote-bs4.min.css">
+  {{-- <link rel="stylesheet" href="{{ url('/') }}/plugins/summernote/summernote-bs4.min.css"> --}}
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -72,7 +72,7 @@
 <!-- Bootstrap 4 -->
 <script src="{{ url('/') }}/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- ChartJS -->
-<script src="{{ url('/') }}/plugins/chart.js/Chart.min.js"></script>
+{{-- <script src="{{ url('/') }}/plugins/chart.js/Chart.min.js"></script> --}}
 <!-- Sparkline -->
 <script src="{{ url('/') }}/plugins/sparklines/sparkline.js"></script>
 <!-- JQVMap -->
@@ -82,13 +82,12 @@
 <script src="{{ url('/') }}/plugins/jquery-knob/jquery.knob.min.js"></script>
 <!-- daterangepicker -->
 <script src="{{ url('/') }}/plugins/moment/moment.min.js"></script>
-<script src="{{ url('/') }}/plugins/daterangepicker/daterangepicker.js"></script>
+{{-- <script src="{{ url('/') }}/plugins/daterangepicker/daterangepicker.js"></script> --}}
 <!-- Tempusdominus Bootstrap 4 -->
 <script src="{{ url('/') }}/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
 <!-- Summernote -->
-<script src="{{ url('/') }}/plugins/summernote/summernote-bs4.min.js"></script>
 <!-- overlayScrollbars -->
-<script src="{{ url('/') }}/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+{{-- <script src="{{ url('/') }}/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script> --}}
 <!-- AdminLTE App -->
 <script src="{{ url('/') }}/dist/js/adminlte.js"></script>
 <!-- AdminLTE for demo purposes -->

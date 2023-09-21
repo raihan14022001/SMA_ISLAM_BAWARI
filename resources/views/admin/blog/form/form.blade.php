@@ -80,6 +80,7 @@
                                 <div class="mb-3">
                                     <input type="file" name="path[]" multiple>
                                 </div>
+                                <p class="text-danger">*pdf required</p>
                                 @error('path')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
