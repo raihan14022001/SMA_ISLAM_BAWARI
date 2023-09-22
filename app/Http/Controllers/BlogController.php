@@ -79,9 +79,12 @@ class BlogController extends Controller
             // dd($params);
         }     
         if ($request->hasFile('image_thumbnail')) {
-            $fileNames = time().$request->file('image_thumbnail')->getClientOriginalName();
-            $path = $request->file('image_thumbnail')->storeAs('images', $fileNames, 'public');
-            $params["image_thumbnail"] = '/storage/'.$path;
+            $file = $request->file('image_thumbnail');
+            $extension = $file->getClientOriginalName();
+            $filenames = time() . '.' . $extension;
+            // $request->file('image_thumbnail')->getClientOriginalName();
+            $path = $file->move('upload/image_thumbnail/', $filenames);
+            $params["image_thumbnail"] = 'upload/image_thumbnail/'.$filenames;
         }
         $data = BlogService::BlogStore($params);
         if(!isset($request['id'])){
