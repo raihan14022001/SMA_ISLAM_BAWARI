@@ -65,7 +65,7 @@
                                     <input type="file" name="image[]" multiple>
                                     @isset($data)
                                         @foreach ($data->image_blog as $im)
-                                            <img src="{{ asset('/storage/'.$im->image) }}" width='80' height='80'>
+                                            <img src="{{ asset($im->image) }}" width='80' height='80'>
                                         @endforeach
                                     @endisset
 

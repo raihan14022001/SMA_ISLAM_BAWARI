@@ -48,7 +48,7 @@
                             <div class="text-center">
                                 @foreach ($data->image_blog as $im)
                                     {{-- <img src="{{ asset()}}" width= '80' height='80'> --}}
-                                    <img src="{{ asset('/storage/' . $im->image) }}" class="img-fluid mb-3 ">
+                                    <img src="{{ asset($im->image) }}" class="img-fluid mb-3 ">
                                 @endforeach
 
                             </div>
