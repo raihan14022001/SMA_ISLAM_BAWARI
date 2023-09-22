@@ -19,7 +19,7 @@
                 @foreach ($data->image_blog as $im)
                     {{-- <img src="{{ asset()}}" width= '80' height='80'> --}}
                     <div class="text-center">
-                        <img src="{{ asset('/storage/' . $im->image) }}" class=" mb-3" width="300">
+                        <img src="{{ asset($im->image) }}" class=" mb-3" width="300">
                     </div>
                 @endforeach
             </div>
