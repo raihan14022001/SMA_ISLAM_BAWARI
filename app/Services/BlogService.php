@@ -66,7 +66,7 @@ class BlogService
                     // 1.1 hapus semua data lama  dari relasi image_blog dan lampiran
                     foreach($relasi->image_blog as $img)
                         {
-                            File::delete ('public/storage/'. $img);
+                            File::delete ($img);
                         } 
                         image_blog::where("blog_id",$params['id'])->delete();
                 }
@@ -74,7 +74,7 @@ class BlogService
                 {
                     foreach($relasi->lampiran as $patch)
                         {
-                            File::delete ('public/storage/'. $patch);
+                            File::delete ($patch);
                         } 
                         lampiran::where("blog_id",$params['id'])->delete();
                 }
@@ -83,32 +83,41 @@ class BlogService
                 {
                     foreach($params['image'] as $img)
                     {
-                        $name = Storage::disk('public')->put('images_blog', $img);
-                        $str_img['image'] = $name;
-                        $images = $relasi->image_blog()->create($str_img);
+                        $file = $img;
+                        $extension = $file->getClientOriginalName();
+                        $filenames = time() . '.' . $extension;
+                        $path = $file->move('upload/image/', $filenames);
+                        $str_img['image'] = $path;
+                        $images = $blog->image_blog()->create($str_img);
                     }
                 }
                 if(isset($params['path']))
                 {
                     foreach($params['path'] as $path)
                     {
-                        $name = Storage::disk('public')->put('lampiran', $path);
-                        $inputLampiran['path'] = $name;
-                        $lampiran = $relasi->lampiran()->create($inputLampiran);
+                            $file = $path;
+                            $extension = $file->getClientOriginalName();
+                            $filenames = time() . '.' . $extension;
+                            $path = $file->move('upload/lampiran/', $filenames);
+                            $inputLampiran['path'] = $path;
+                            $images = $relasi->lampiran()->create($inputLampiran);
                     }
                 }                
                 // 3.update data blog
                 $data = $blog->update($inputUser);
                 // 4.celecay ;P
             }else{
-                // prose create
+                // proses create
                 // 1.create data blog yang sudah di req
                 $data = Blog::create($inputUser);
                 // 2.create data image  simpan di stroe
                     foreach($params['image'] as $img)
                     {
-                        $name = Storage::disk('public')->put('images_blog', $img);
-                        $str_img['image'] = $name;
+                        $file = $img;
+                        $extension = $file->getClientOriginalName();
+                        $filenames = time() . '.' . $extension;
+                        $path = $file->move('upload/image/', $filenames);
+                        $str_img['image'] = $path;
                         $images = $data->image_blog()->create($str_img);
                     }
                 // 3.kalo ada req lampitran simpan di di stroe dan cretae di database
@@ -116,9 +125,12 @@ class BlogService
                     {
                         foreach($params['path'] as $path)
                         {
-                            $name = Storage::disk('public')->put('lampiran', $path);
-                            $inputLampiran['path'] = $name;
-                            $lampiran = $data->lampiran()->create($inputLampiran);
+                            $file = $path;
+                            $extension = $file->getClientOriginalName();
+                            $filenames = time() . '.' . $extension;
+                            $path = $file->move('upload/lampiran/', $filenames);
+                            $inputLampiran['path'] = $path;
+                            $images = $data->lampiran()->create($inputLampiran);
                         }
                     }
                 // 4.finish
