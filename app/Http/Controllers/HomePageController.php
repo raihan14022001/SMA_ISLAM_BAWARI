@@ -45,7 +45,7 @@ class HomePageController extends Controller
     public function download_pdf($id)
     {
         $file = lampiran::find($id);
-        $path = public_path("/storage/{$file->path}");
+        $path = $file->path;
         return \Response::download($path);
     }
 
