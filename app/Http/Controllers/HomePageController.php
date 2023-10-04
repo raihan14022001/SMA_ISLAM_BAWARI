@@ -53,7 +53,7 @@ class HomePageController extends Controller
     //home
     public function visi_misi()
     {
-        $data_id = kategori::where('nama_kategori', 'BERITA SEKOLAH')->get();
+        $data_id = kategori::where('nama_kategori', 'VISI MISI')->get();
         $data = Blog::with('lampiran', 'image_blog', )->where('kategori_id', $data_id->last()->id)->get();
         $kategori =  $data_id->last()->nama_kategori;
 

@@ -24,14 +24,14 @@
                 aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
+            <div class="collapse navbar-collapse d-lg-flex " id="navbarsExample11">
                 <a class="navbar-brand col-lg-3 me-0" href="#"></a>
-                <ul class="navbar-nav col-lg-6 justify-content-lg-center">
+                <ul class="navbar-nav col-lg-6 justify-content-lg-center ">
                     <li class="nav-item">
                         <a class="nav-link {{ checkRouteActive('visi-misi') }}" aria-current="page"
                             href="{{ url('profile') }}">Profil</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown" style="margin-left: 20px; margin-right: 20px;">
                         <a class="nav-link" href="#" data-bs-toggle="dropdown" aria-expanded="false">Tentang</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item  {{ checkRouteActive('visi-misi') }}  "
@@ -54,7 +54,7 @@
                                     href="{{ url('prestasi') }}">Presitasi</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown" style="margin-left: 20px; margin-right: 20px;">
                         <a class="nav-link " href="#" data-bs-toggle="dropdown" aria-expanded="false">Guru</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item {{ checkRouteActive('direktori-guru') }}"
@@ -64,7 +64,7 @@
 
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown" style="margin-left: 20px; margin-right: 20px;">
                         <a class="nav-link " href="#" data-bs-toggle="dropdown" aria-expanded="false">Siswa</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item {{ checkRouteActive('direktori-siswa') }}"
@@ -77,7 +77,7 @@
                                     href="{{ url('osis') }}">Osis</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown" style="margin-left: 20px; margin-right: 20px;">
                         <a class="nav-link " href="#" data-bs-toggle="dropdown" aria-expanded="false">Berita</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item {{ checkRouteActive('berita-sekolah') }}"
@@ -86,7 +86,7 @@
                                     href="{{ url('berita-umum') }}">Berita Umum</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown" style="margin-left: 20px; margin-right: 20px;">
                         <a class="nav-link " href="#" data-bs-toggle="dropdown"
                             aria-expanded="false">Informasi</a>
                         <ul class="dropdown-menu">
@@ -100,7 +100,7 @@
                                     href="{{ url('informasi-alumni') }}">Informasi Alumni</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" style="margin-left: 20px; margin-right: 20px;">
                         <a class="nav-link {{ checkRouteActive('agenda') }}" aria-current="page"
                             href="{{ url('agenda') }}">Agenda</a>
                     </li>
